@@ -133,6 +133,13 @@ def main():
                         html.write("<br/>\n")
                     text = line
                     html.write(text)
+                # Final cleanup: close any open tags
+            if p_open:
+                html.write("\n</p>\n")
+            if ul_open:
+                html.write("\n</ul>\n")
+            if ol_open:
+                html.write("\n</ol>\n")    
 
     # Exits after sucessful program execution
     sys.exit()
